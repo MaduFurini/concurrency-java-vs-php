@@ -58,14 +58,14 @@ Essa abordagem é conhecida como lock-free, pois evita bloqueio de threads
 
 ### 🧠 Diferença Principal
 
-| Feature     | Volatile                          | Atomic Classes             |
-| ----------- | --------------------------------- | -------------------------- |
-| Purpose     | Garantir visibilidade das alterações<br>entre threads | Garante atomicidade e<br>visibilidade |
-| Atomicity   | Não garantida; apenas garante<br>visibilidade | Garantida para operações<br>individuais |
-| Compound Operations | Não é thread-safe (count++ não é atômico) | Thread-safe<br>(incrementAndGet()) |
-| Usage       | Flags simples ou variáveis de estado | Contadores, flags, referências<br>que exigem ações atômicas |
-| Sync        | Não, mas a visibilidade é garantida | Não usa sincronização tradicional;<br>baseado em CAS |
-| Performance | Baixo overhead, mas funcionalidade limitada | Um pouco maior overhead,<br>mas ainda sem bloqueio ||
+| Característica | Volatile                          | Classes Atômicas           |
+| -------------- | --------------------------------- | -------------------------- |
+| Propósito      | Garantir visibilidade das alterações<br>entre threads | Garante atomicidade e<br>visibilidade |
+| Atomicidade    | Não garantida; apenas garante<br>visibilidade | Garantida para operações<br>individuais |
+| Operações Compostas | Não é thread-safe (count++ não é atômico) | Thread-safe<br>(incrementAndGet()) |
+| Uso            | Flags simples ou variáveis de estado | Contadores, flags, referências<br>que exigem ações atômicas |
+| Sincronização  | Não, mas a visibilidade é garantida | Não usa sincronização tradicional;<br>baseado em CAS |
+| Performance    | 
 
 ### 🔹 Outros Mecanismos em Java
 
