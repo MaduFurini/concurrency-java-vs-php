@@ -58,20 +58,14 @@ This approach is known as lock-free, since it avoids thread blocking
 
 ### 🧠 Key Difference
 
-| Feature     | Volatile                          |  Atomic Classes            |
+| Feature     | Volatile                          | Atomic Classes             |
 | ----------- | --------------------------------- | -------------------------- |
-| Purpose     | Ensuring visibility of changes    | Ensures atomicity and      |
-|             | across threads                    | visibility                 |
-| Atomicity   | Not guaranteed; only ensures      | Guaranteed for individual  |
-|             | visibility                        | operations                 |
-| Compound    | Not thread-safe (count++ is not   | Thread-safe                |
-| Operations  | atomic)                           | (incrementAndGet())        |
-| Usage       | Simple flags or status variables  | Counters, flags, references|
-|             |                                   | needing atomic actions     |
-| Sync        | No, but visibility is ensured     | No traditional synchroni-  |
-|             |                                   | zation; CAS-based          |
-| Performance | Lower overhead but limited func-  | Slightly higher overhead,  |
-|             | tionality                         | but still non-blocking     |
+| Purpose     | Ensuring visibility of changes<br>across threads | Ensures atomicity and<br>visibility |
+| Atomicity   | Not guaranteed; only ensures<br>visibility | Guaranteed for individual<br>operations |
+| Compound Operations | Not thread-safe (count++ is not atomic) | Thread-safe<br>(incrementAndGet()) |
+| Usage       | Simple flags or status variables  | Counters, flags, references<br>needing atomic actions |
+| Sync        | No, but visibility is ensured     | No traditional synchronization;<br>CAS-based |
+| Performance | Lower overhead but limited functionality | Slightly higher overhead,<br>but still non-blocking ||
 
 ### 🔹 Other Java Mechanisms
 
@@ -185,23 +179,27 @@ PHP uses:
 
 ### ⚠️ Note on Laravel (PHP Framework)
 
-Although PHP does not natively support multithreading, modern frameworks such as Laravel provide mechanisms to handle concurrency and parallel execution through architecture and external systems.
+Although PHP does not natively support multithreading, modern frameworks such as Laravel provide mechanisms to handle concurrency and parallel execution through architecture and external systems
 
 Laravel does not implement true multithreading within a single request. Instead, it achieves parallelism using:
 
-Queues and Workers
-Tasks can be dispatched to background workers, allowing multiple jobs to be processed concurrently.
+* Queues and Workers
+  
+Tasks can be dispatched to background workers, allowing multiple jobs to be processed concurrently
 
-Multiple Processes
-Laravel applications run on top of PHP-FPM, where multiple worker processes handle requests in parallel.
+* Multiple Processes
 
-Asynchronous Jobs
-Long-running operations (e.g., sending emails, processing data) are executed outside the main request cycle.
+Laravel applications run on top of PHP-FPM, where multiple worker processes handle requests in parallel
 
-Integration with External Systems
+* Asynchronous Jobs
+
+Long-running operations (sending emails, processing data) are executed outside the main request cycle
+
+* Integration with External Systems
+
 Tools like Redis and message queues enable safe and efficient concurrent processing.
 
-👉 This means Laravel achieves practical parallelism, but not true multithreading with shared memory, as seen in languages like Java.
+👉 This means Laravel achieves practical parallelism, but not true multithreading with shared memory, as seen in languages like Java
 
 # 📚 References
 
@@ -212,17 +210,21 @@ Critical Section – Class slides (Prof. Cristiane Imamura)
 ## ☕ Java Concurrency
 
 Java volatile vs Atomic classes
+
 https://medium.com/@qingedaig/java-volatile-vs-atomic-classes-7599eb70a661
 
 ## 🐘 PHP Concurrency & Parallelism
 
 PHP and Multithreading: A Lighthearted Look at Concurrency
+
 https://infinitypaul.medium.com/php-and-multithreading-a-lighthearted-look-at-concurrency-dac4540f3726
 
 Programação Paralela e Assíncrona com PHP
+
 https://medium.com/@sschonss/programação-paralela-e-assíncrona-com-php-5969c49d0bba
 
 Unlocking Parallel Processing in PHP
+
 https://devriazul.medium.com/unlocking-parallel-processing-in-php-yes-its-possible-e915dab720b2
 
 ## ⚙️ PHP Architecture & Execution Model
@@ -230,6 +232,7 @@ https://devriazul.medium.com/unlocking-parallel-processing-in-php-yes-its-possib
 PHP-FPM manages multiple processes and handles concurrent requests efficiently
 
 Understanding PHP-FPM
+
 https://dev.to/arsalanmee/understanding-php-fpm-a-comprehensive-guide-3ng8
 
 ## 🔒 Concurrency Control in PHP
@@ -237,9 +240,11 @@ https://dev.to/arsalanmee/understanding-php-fpm-a-comprehensive-guide-3ng8
 PHP provides file locking mechanisms such as flock for mutual exclusion
 
 Parallel processing in PHP (StackOverflow discussion)
+
 https://stackoverflow.com/questions/6107339/parallel-processing-in-php-how-do-you-do-it
 
 ## 🧪 Additional Reading
 
 PHP multithreading faking it
+
 https://w-shadow.com/blog/2007/08/20/php-multithreading-faking-it/
