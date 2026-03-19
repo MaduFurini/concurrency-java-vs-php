@@ -2,8 +2,8 @@
 
 🌐 Idioma:
 
-* 🇺🇸 [English](./java-vs-php.pt-BR.md)
-* 🇧🇷 Português (atual)
+* 🇺🇸 English (current)
+* 🇧🇷 [Português](./java-vs-php.pt-BR.md)
 
 ## 🧠 Critical Section
 
