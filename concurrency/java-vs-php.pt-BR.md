@@ -2,7 +2,7 @@
 
 🌐 Idioma:
 
-* 🇺🇸 [English] (./java-vs-php.md)
+* 🇺🇸 [English](./java-vs-php.md)
 * 🇧🇷 Português (atual)
 
 ## 🧠 Seção Crítica
