@@ -51,8 +51,8 @@ The goal of this repository is to:
 
 > 📊 Practical comparison of concurrency between languages
 
-- ☕ [Java vs PHP – Concurrency](./concurrency/java-vs-php.md)  
-- 🐘 [Java vs PHP – Portuguese Version](./concurrency/java-vs-php.pt-BR.md)
+- ☕ [Java vs PHP – Concurrency](./concurrency/fundamentals/java-vs-php.md)  
+- 🐘 [Java vs PHP – Portuguese Version](./concurrency/fundamentals/java-vs-php.pt-BR.md)
 
 
 # 📚 References
